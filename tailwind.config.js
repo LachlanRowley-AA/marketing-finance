@@ -31,7 +31,7 @@ const config: Config = {
         sans: ["Cera", ...fontFamily.sans],
       },
       clipPath: {
-        "polygon-1": "polygon(0 0vh, 100% 20vh, 100% 60vh, 0% 60vh)",
+        "polygon-1": "polygon(0 0vh, 100% 15vh, 100% 60vh, 0% 60vh)",
         "polygon-2": "polygon(0 20vh, 100% 35vh, 100% 75vh, 0% 60vh)",
       },
     },

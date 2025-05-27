@@ -3,6 +3,7 @@
 import { Button } from "@relume_io/relume-ui";
 import React from "react";
 import { RxChevronRight } from "react-icons/rx";
+import { Comparison1 } from "./Comparison";
 
 export function Layout4() {
   return (
@@ -10,14 +11,12 @@ export function Layout4() {
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold md:mb-4">Empower</p>
             <h1 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-              Unlock Your Branding Potential with Financing
+              The Right Broker Makes All the Difference
             </h1>
             <p className="mb-6 md:mb-8 md:text-md">
-              Partnering with us means gaining access to flexible financing
-              solutions tailored for your branding needs. We help you focus on
-              what matters most—growing your business.
+              Most brokers don’t understand branding projects. We do – 
+              and we’ve built lender relationships to get you funded faster, with terms that actually make sense.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
@@ -62,6 +61,7 @@ export function Layout4() {
           </div>
         </div>
       </div>
+      <Comparison1 />
     </section>
   );
 }

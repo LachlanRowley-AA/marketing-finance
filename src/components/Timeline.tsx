@@ -73,17 +73,17 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
   };
 
   return (
-    <div className="grid grid-cols-[max-content_1fr] items-start justify-items-center gap-4 md:grid-cols-[1fr_max-content_1fr] md:gap-8 lg:gap-0">
+    <div className="grid grid-cols-[1] items-start justify-items-center gap-4 md:grid-cols-[1fr_max-content_1fr] md:gap-8 lg:gap-0">
       {isEven ? (
         <React.Fragment>
           <div className="hidden w-full md:block" />
-          <TimelineCircle ref={circleRef} backgroundColor={backgroundColor} />
+          <TimelineCircle className="md:block" ref={circleRef} backgroundColor={backgroundColor} />
           <TimelineContent item={item} />
         </React.Fragment>
       ) : (
         <React.Fragment>
           <TimelineContent item={item} />
-          <div className="hidden w-full md:block" />
+
         </React.Fragment>
       )}
     </div>
