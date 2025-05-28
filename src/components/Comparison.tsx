@@ -46,7 +46,7 @@ export const Comparison1 = (props: Comparison1Props) => {
           <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h1>
         </div>
         <div className="mx-auto max-w-xl">
-          <div className="grid grid-cols-3 border-b border-border-primary  md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+          <div className="grid grid-cols-3 border-y border-border-primary  md:grid-cols-[1.5fr_1fr_1fr_1fr]">
             {comparisonProducts.map((comparison, index) => (
               <React.Fragment key={index}>
                 <div className="hidden h-full flex-col items-start justify-end py-4 pr-4 sm:py-6 sm:pr-6 md:flex lg:py-6 lg:pr-6">
@@ -68,13 +68,18 @@ const ProductPlan = ({ index, ...product }: Product & { index: number }) => {
   return (
     <div
       className={clsx("flex h-full flex-col justify-between px-2 py-4 sm:px-4 sm:py-6 lg:p-6", {
-        "bg-brand-primary": index === 0,
+        "bg-primary": index === 0,
       })}
     >
       <div className="flex flex-col items-center gap-2 text-center">
         <img src={product.icon.src} alt={product.icon.alt} className="size-12" />
-        <h2 className="text-md font-bold leading-[1.4] md:text-xl">{product.productName}</h2>
-        <p>{product.description}</p>
+        <h2 className={clsx("text-md font-bold leading-[1.4]"
+            , {
+                "text-text-brand text-3xl" : index === 0,
+                
+                
+            }
+        )}>{product.productName}</h2>
       </div>
     </div>
   );
@@ -82,30 +87,28 @@ const ProductPlan = ({ index, ...product }: Product & { index: number }) => {
 
 const FeaturesSection = ({ features }: { features: Feature[] }) => {
   return (
-    <div>
-      {features.map((feature, index) => (
-        <div key={index}>
-          <div
-            key={index}
-            className="grid grid-cols-3 border-b border-border-primary md:grid-cols-[1.5fr_1fr_1fr_1fr]"
-          >
-            <p className="col-span-3 row-span-1 border-b border-border-primary py-4 pr-4 md:col-span-1 md:border-none md:pr-6">
-              {feature.text}
-            </p>
-            {feature.items.map((item, index) => (
-              <div
-                key={index}
-                className={clsx(
-                  "flex items-center justify-center px-4 py-4 text-center font-semibold md:px-6",
-                  {
-                    "bg-brand-primary": index === 0,
-                  },
-                )}
-              >
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
+    <div className="divide-y divide-[#FFFFFF] border-y border-[#FFFFFF]">
+      {features.map((feature, featureIndex) => (
+        <div
+          key={featureIndex}
+          className="grid grid-cols-3 md:grid-cols-[1.5fr_1fr_1fr_1fr]"
+        >
+          <p className="col-span-3 row-span-1 py-4 pr-4 md:col-span-1 md:pr-6">
+            {feature.text}
+          </p>
+          {feature.items.map((item, itemIndex) => (
+            <div
+              key={itemIndex}
+              className={clsx(
+                "flex items-center justify-center px-4 py-4 text-center font-semibold md:px-6",
+                {
+                  "bg-primary": itemIndex === 0,
+                },
+              )}
+            >
+              <span>{item}</span>
+            </div>
+          ))}
         </div>
       ))}
     </div>

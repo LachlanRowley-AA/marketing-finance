@@ -7,6 +7,8 @@ import { Layout4 } from "./components/Layout4";
 import { Cta19 } from "./components/Cta19";
 import { Footer10 } from "./components/Footer10";
 import { Timeline10 } from "./components/Timeline";
+import { Contact12 } from "./components/Contact";
+import { Contact } from "./components/ContactNew";
 
 export default function Page() {
   return (
@@ -27,7 +29,8 @@ export default function Page() {
         <div className="relative z-10"><Layout238 /></div>
         <div className="relative z-10"><Layout4 /></div>
         <div className="relative z-10"><Cta19 /></div>
-        <div className="relative z-10"><Footer10 /></div>
+        <div className="relative z-10"><Contact /></div>
+        <div className="relative z-0"><Footer10 /></div>
       </div>
     </div>
   );

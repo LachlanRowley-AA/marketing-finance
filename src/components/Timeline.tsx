@@ -61,6 +61,7 @@ export const Timeline10 = (props: Timeline10Props) => {
 
 const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) => {
   const isEven = index % 2 === 0;
+  const isLast = index === Timeline10Defaults.timelineItems.length - 1;
   const circleRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -73,19 +74,63 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
   };
 
   return (
-    <div className="grid grid-cols-[1] items-start justify-items-center gap-4 md:grid-cols-[1fr_max-content_1fr] md:gap-8 lg:gap-0">
-      {isEven ? (
-        <React.Fragment>
-          <div className="hidden w-full md:block" />
-          <TimelineCircle className="md:block" ref={circleRef} backgroundColor={backgroundColor} />
-          <TimelineContent item={item} />
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          <TimelineContent item={item} />
+    <div className="relative w-full flex flex-col items-center overflow-visible">
+      <div className="grid grid-cols-[1] items-start justify-items-center gap-4 md:grid-cols-[1fr_max-content_1fr] md:gap-8 lg:gap-0 w-full">
+        {isEven ? (
+          <>
+            <div className="hidden w-full md:block" />
+            <TimelineCircle className="md:block" ref={circleRef} backgroundColor={backgroundColor} />
+            <TimelineContent item={item} />
+          </>
+        ) : (
+          <>
+            <TimelineContent item={item} />
+            <TimelineCircle className="md:block" ref={circleRef} backgroundColor={backgroundColor} />
+            <div className="hidden w-full md:block" />
+          </>
+        )}
+      </div>
 
-        </React.Fragment>
+      {/* Dashed Arrow Between Items */}
+      {!isLast && isEven && (
+        <div className="flex items-center justify-center relative z-50 overflow-visible hidden md:block">
+          <svg
+            className="w-8 h-20 text-gray-400 overflow-visible"
+            viewBox="0 0 24 60"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="6 6"
+          >
+          <path d="M20 -80 
+              C-40 -78, -90 -75, -130 -50 
+              C-170 -25, -190 10, -200 95
+"   // Third: Up then down to end
+            />
+          </svg>
+        </div>
       )}
+      {!isLast && !isEven && (
+        <div className="flex items-center justify-center relative z-50 overflow-visible hidden md:block">
+          <svg
+            className="w-8 h-20 text-gray-400 overflow-visible"
+            viewBox="0 0 24 60"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="6 6"
+          >
+          <path d="M0 -80 
+                  C60 -78, 110 -75, 150 -50
+                  C190 -25, 210 10, 220 95" />
+          </svg>
+        </div>
+      )}
+
     </div>
   );
 };
