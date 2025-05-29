@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <meta name="google-site-verification" content="zO1u8NQYgHAPUrmDrGJG30pS_IsAPPAhA17LxzGt2l4" />
     <App />
   </React.StrictMode>
 );

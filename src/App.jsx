@@ -15,7 +15,6 @@ import { Briefing } from "./components/Briefing";
 export default function Page() {
   return (
     <div className="relative z-0">
-        <meta name="google-site-verification" content="zO1u8NQYgHAPUrmDrGJG30pS_IsAPPAhA17LxzGt2l4" />
       <div>
         <link 
           rel="preload"
