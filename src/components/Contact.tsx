@@ -13,7 +13,7 @@ import {
   Button,
 } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 import { RxChevronRight } from "react-icons/rx";
 import { useState } from "react";
@@ -41,11 +41,25 @@ type Props = {
 
 export type Contact12Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
-export const Contact12 = (props: Contact12Props) => {
-  const { tagline, heading, description, contacts, button } = {
+export const Contact12 = (props: Contact12Props & {onClose?: () => void}) => {
+  const { tagline, heading, description, contacts, button, onClose } = {
     ...Contact12Defaults,
     ...props,
   };
+
+  const modalRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose?.();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => 
+      document.removeEventListener("mousedown", handleClickOutside);
+    }, [onClose]);
+  
 
   const [firstNameInput, setFirstNameInput] = useState("");
   const [lastNameInput, setLastNameInput] = useState("");
@@ -89,7 +103,18 @@ export const Contact12 = (props: Contact12Props) => {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#ebebeb]">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <section ref={modalRef} id="relume" className="fixed pl-[3%] py-12 md:py-24 lg:py-16 bg-[#ebebeb] rounded-lg">
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-4 text-gray-600 hover:text-black text-2xl"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        )}
+
       <div className="container">
         <div className="rb-12 mb-8 max-w-lg md:mb-12">
           <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl text-text-secondary">
@@ -97,9 +122,9 @@ export const Contact12 = (props: Contact12Props) => {
           </h2>
           <p className="md:text-md text-text-secondary">{description}</p>
         </div>
-        <div className="grid auto-cols-fr grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-[1fr_1fr] md:gap-y-16 lg:gap-x-20 border-y border-[#FFFFFF]">
-          <form className="grid grid-cols-1 grid-rows-[auto_auto] gap-6 border-y border-[#FFFFFF] text-text-secondary" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-2 gap-6 border border-[#FFFFFF]">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-[1fr_1fr] md:gap-y-16 lg:gap-x-20 border-y">
+          <form className="grid grid-cols-1 grid-rows-[auto_auto] gap-6  text-text-secondary" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-2 gap-6">
               <div className="grid w-full items-center">
                 <Label htmlFor="firstName" className="mb-2">
                   First name
@@ -185,10 +210,10 @@ export const Contact12 = (props: Contact12Props) => {
               <Button {...button}>{button.title}</Button>
             </div>
           </form>
-          <div className="mb-auto grid gap-x-4 gap-y-10 py-2 sm:grid-cols-2">
+          <div className="mb-auto grid gap-x-4 gap-y-10 py-2 sm:grid-cols-2 hidden md:block">
             {contacts.map((contact, index) => (
               <div key={index}>
-                <div className="mb-3 md:mb-4">{contact.icon}</div>
+                <div className="mb-1 md:mb-2 mt-5">{contact.icon}</div>
                 <h3 className="mb-2 text-md font-bold leading-[1.4] md:text-xl text-text-secondary">{contact.title}</h3>
                 <p className="mb-2 text-text-secondary">{contact.description}</p>
                 {contact.title === "Office" && contact.button ? (
@@ -208,6 +233,7 @@ export const Contact12 = (props: Contact12Props) => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

@@ -28,7 +28,7 @@ export default function Page() {
         <div className="relative z-10"><Timeline10 /></div>
         <div className="relative z-10"><Layout238 /></div>
         <div className="relative z-10"><Layout4 /></div>
-        <div className="relative z-10"><Cta19 /></div>
+        {/* <div className="relative z-10"><Cta19 /></div> */}
         <div className="relative z-10"><Contact /></div>
         <div className="relative z-0"><Footer10 /></div>
       </div>
