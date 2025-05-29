@@ -32,9 +32,9 @@ export function Layout90() {
         <div
           className="clip-polygon-1 lg:clip-polygon-2 bg-[#01E194] w-full h-full"
         >
-        <div className="container relative px-[2%] pointer-events-auto pb-[10vh]"> {/* Added padding-bottom */}
-          <div className="mb-8 grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:mb-18 md:grid-cols-2 md:gap-x-8 md:gap-y-8 lg:mb-20 lg:gap-x-12">
-            <div className="mt-[10vh] md:mt-[20vh] lg:mt-[35vh]"> {/* Reduced top margin on mobile */}
+        <div className="container relative px-[2%] pointer-events-auto">
+          <div className="mb-0 grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:mb-18 md:grid-cols-2 md:gap-x-8 md:gap-y-8 lg:mb-20 lg:gap-x-12">
+            <div className="mt-[10vh] md:mt-[20vh] lg:mt-[35vh]">
               {["Elevate Your Brand.", "Accelerate Your Growth", "Finance Your Vision."].map((text, index) => {
                 const [highlight, ...rest] = text.split(" ");
                 return (
@@ -48,7 +48,7 @@ export function Layout90() {
                 );
               })}
             </div>
-            <p className="mt-4 md:mt-[20vh] lg:mt-[35vh] mb-[5vh] text-base sm:text-lg md:text-xl lg:text-2xl font-normal text-text-secondary">
+            <p className="mt-0 md:mt-[20vh] lg:mt-[35vh] mb-[5vh] text-base sm:text-lg md:text-xl lg:text-2xl font-normal text-text-secondary">
               Stop dreaming about a powerful brand identity and start building it. 
               Secure the funding you need to collaborate with a leading design agency and craft a branding deck 
               that reflects your company's true value and ambition.

@@ -29,7 +29,7 @@ export const Contact = (props: Cta25Props) => {
             {/* Phone Link Button */}
             <a
               href="tel:1300144542"
-              className="rounded-3xl text-5xl px-6 py-2 flex justify-center items-center 
+              className="rounded-3xl text-3xl sm:text-5xl px-6 py-2 flex justify-center items-center 
               gap-2 bg-black text-white hover:drop-shadow-[0px_0px_10px_#FFF] transition"
             >
               <BiPhone />
@@ -39,7 +39,7 @@ export const Contact = (props: Cta25Props) => {
             {/* Contact Form Button */}
             <Button
               variant="secondary"
-              className="rounded-3xl text-5xl px-6 py-2 flex items-center gap-2 hover:drop-shadow-[0px_0px_10px_#FFF]"
+              className="rounded-3xl text-3xl sm:text-5xl px-6 py-2 flex items-center gap-2 hover:drop-shadow-[0px_0px_10px_#FFF]"
               onClick={() => setContact(true)}
             >
               <HiCursorClick 

@@ -94,7 +94,6 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
           <>
             <TimelineContent item={item} />
             <TimelineCircle className="md:block" ref={circleRef} backgroundColor={backgroundColor} />
-            <div className="hidden w-full md:block" />
           </>
         )}
       </div>
