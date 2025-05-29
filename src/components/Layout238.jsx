@@ -61,7 +61,7 @@ export function Layout238() {
           <div className="flex flex-col items-center text-center">
             <div className="mb-5 md:mb-6">
               <img
-                src="./assessment2.svg"
+                src="./assessment.svg"
                 alt="Relume logo"
                 className="size-36"
               />

@@ -51,58 +51,15 @@ export function Navbar6() {
             alt="Logo image"
           />
         </a>
-        {/* <div className="absolute hidden h-screen overflow-auto border-b border-border-primary bg-background-primary px-[5%] pt-4 pb-24 md:pb-0 lg:static lg:ml-6 lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-end lg:border-none lg:bg-none lg:px-0 lg:pt-0">
-          <div className="flex items-center gap-4">
-            <Button title="Join" variant="secondary" size="sm">
-              Learn More
-            </Button>
-            <Button title="Learn" size="sm">
-              Apply Now
-            </Button>
-          </div>
-        </div> */}
-        <button
-          className="-mr-2 flex size-12 cursor-pointer flex-col items-center justify-center lg:hidden"
-          onClick={useActive.toggleMobileMenu}
+        <Button
+          as="a"
+          href="tel:1300144542"
+          className="px-12 py-3 text-lg md:px-8 md:text-xl text-white rounded-3xl"
+          style={{ backgroundColor: "#01E194" }}
+          title="Call Now"
         >
-          <motion.span
-            className="my-[3px] h-0.5 w-6 bg-black"
-            animate={useActive.animateMobileMenuButtonSpan}
-            variants={{
-              open: { translateY: 8, transition: { delay: 0.1 } },
-              rotatePhase: { rotate: -45, transition: { delay: 0.2 } },
-              closed: {
-                translateY: 0,
-                rotate: 0,
-                transition: { duration: 0.2 },
-              },
-            }}
-          />
-          <motion.span
-            className="my-[3px] h-0.5 w-6 bg-black"
-            animate={useActive.animateMobileMenu}
-            variants={{
-              open: { width: 0, transition: { duration: 0.1 } },
-              closed: {
-                width: "1.5rem",
-                transition: { delay: 0.3, duration: 0.2 },
-              },
-            }}
-          />
-          <motion.span
-            className="my-[3px] h-0.5 w-6 bg-black"
-            animate={useActive.animateMobileMenuButtonSpan}
-            variants={{
-              open: { translateY: -8, transition: { delay: 0.1 } },
-              rotatePhase: { rotate: 45, transition: { delay: 0.2 } },
-              closed: {
-                translateY: 0,
-                rotate: 0,
-                transition: { duration: 0.2 },
-              },
-            }}
-          />
-        </button>
+          Call 1300 144 542
+      </Button>
       </div>
       <AnimatePresence>
         <motion.div

@@ -49,7 +49,14 @@ export const Timeline10 = (props: Timeline10Props) => {
           <div className="relative grid grid-cols-1 justify-items-center gap-12 md:gap-12">
             <React.Fragment>
               {timelineItems.map((item, index) => (
-                <TimelineItem key={index} index={index} item={item} />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  >
+                  <TimelineItem key={index} index={index} item={item} />
+                </motion.div>
               ))}
             </React.Fragment>
           </div>
@@ -90,7 +97,12 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
           </>
         )}
       </div>
-
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
       {/* Dashed Arrow Between Items */}
       {!isLast && isEven && (
         <div className="flex items-center justify-center relative z-50 overflow-visible hidden md:block">
@@ -106,8 +118,7 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
           >
           <path d="M20 -80 
               C-40 -78, -90 -75, -130 -50 
-              C-170 -25, -190 10, -200 95
-"   // Third: Up then down to end
+              C-170 -25, -190 10, -200 95"
             />
           </svg>
         </div>
@@ -130,7 +141,7 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
           </svg>
         </div>
       )}
-
+      </motion.div>
     </div>
   );
 };

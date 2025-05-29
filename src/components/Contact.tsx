@@ -122,7 +122,7 @@ export const Contact12 = (props: Contact12Props & {onClose?: () => void}) => {
           </h2>
           <p className="md:text-md text-text-secondary">{description}</p>
         </div>
-        <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-[1fr_1fr] md:gap-y-16 lg:gap-x-20 border-y">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-[1fr_0.75fr] md:gap-y-16 lg:gap-x-20 border-y">
           <form className="grid grid-cols-1 grid-rows-[auto_auto] gap-6  text-text-secondary" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-6">
               <div className="grid w-full items-center">

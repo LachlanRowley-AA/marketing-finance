@@ -81,10 +81,10 @@ export const Footer10 = (props: Footer10Props) => {
     <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20 relative z-10 bg-black">
       <div className="container">
         <div className="grid grid-cols-1 items-start gap-x-[8vw] gap-y-12 border border-border-primary p-8 md:gap-y-16 md:p-12 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4">
-          <div className="grid grid-cols-1 items-start gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12 md:gap-x-8 lg:grid-cols-4">
+          <div className="grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-12 md:gap-x-8 lg:grid-cols-4">
             <a
               href={logo.url}
-              className="sm:col-start-1 sm:col-end-4 sm:row-start-1 sm:row-end-2 lg:col-start-auto lg:col-end-auto lg:row-start-auto lg:row-end-auto"
+              className="sm:row-start-1 sm:row-end-2"
             >
               <img src={logo.src} alt={logo.alt} />
             </a>
@@ -143,6 +143,9 @@ export const Footer10 = (props: Footer10Props) => {
             ))}
           </div>
         </div>
+        <p className="text-sm">
+          ABN: 84 636 666 709
+        </p>
       </div>
     </footer>
   );

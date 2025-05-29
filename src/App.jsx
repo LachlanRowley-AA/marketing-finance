@@ -9,6 +9,7 @@ import { Footer10 } from "./components/Footer10";
 import { Timeline10 } from "./components/Timeline";
 import { Contact12 } from "./components/Contact";
 import { Contact } from "./components/ContactNew";
+import { Comparison1 } from "./components/Comparison";
 
 export default function Page() {
   return (
@@ -28,6 +29,7 @@ export default function Page() {
         <div className="relative z-10"><Timeline10 /></div>
         <div className="relative z-10"><Layout238 /></div>
         <div className="relative z-10"><Layout4 /></div>
+        <div className="relative z-10"><Comparison1 /></div>
         {/* <div className="relative z-10"><Cta19 /></div> */}
         <div className="relative z-10"><Contact /></div>
         <div className="relative z-0"><Footer10 /></div>
