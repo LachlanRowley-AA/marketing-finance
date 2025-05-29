@@ -44,22 +44,25 @@ export function Navbar6() {
       id="relume"
       className="relative z-[999] flex min-h-16 w-full items-center border-b border-border-primary bg-background-primary px-[5%] md:min-h-18"
     >
-      <div className="mx-auto flex size-full max-w-full items-center justify-between">
+      <div className="mx-auto grid grid-cols-2 size-full max-w-full items-center justify-between">
         <a href="#" className="w-48">
           <img
             src="./Asset Alley Logo_ColourInverseScreenUse.png"
             alt="Logo image"
           />
         </a>
+        <div className="flex justify-end ">
         <Button
           as="a"
           href="tel:1300144542"
-          className="px-12 py-3 text-lg md:px-8 md:text-xl text-white rounded-3xl"
+          className=" py-3 text-lg md:px-8 md:text-xl text-white rounded-3xl hover:drop-shadow-[0px_0px_10px_#01E194]
+              max-w-[200px] hidden sm:flex"
           style={{ backgroundColor: "#01E194" }}
           title="Call Now"
         >
           Call 1300 144 542
       </Button>
+        </div>
       </div>
       <AnimatePresence>
         <motion.div

@@ -32,14 +32,14 @@ export function Header26() {
               <div className="mt-6 flex items-center justify-center gap-x-6 md:mt-8">
                 <Button
                   className="px-8 py-4 text-lg md:px-10 md:py-5 md:text-xl bg-gradient-to-b from-brand-primary to-brand-shade 
-                    hover:bg-brand-primary/90 text-white rounded-3xl hidden md:block"
+                    hover:bg-brand-primary/90 text-white rounded-3xl hidden md:block hover:drop-shadow-[0px_0px_10px_#01E194]"
                   title="Learn More"
                 >
                   Learn More
                 </Button>
                 <Button
                   className="px-8 py-4 text-lg md:px-10 md:py-5 md:text-xl bg-gradient-to-b from-brand-primary to-brand-shade 
-                    hover:bg-brand-primary text-white rounded-3xl"
+                    hover:bg-brand-primary text-white rounded-3xl hover:drop-shadow-[0px_0px_10px_#01E194] transition"
                   title="Apply Now"
                   variant="secondary"
                 >

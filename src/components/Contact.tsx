@@ -243,7 +243,7 @@ export const Contact12Defaults: Props = {
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   contacts: [
     {
-      icon: <BiPhone className="size-8" />,
+      icon: <BiPhone className="size-8 fill-black" />,
       title: "Phone",
       description: "Lorem ipsum dolor sit amet.",
       link: {
@@ -252,9 +252,9 @@ export const Contact12Defaults: Props = {
       },
     },
     {
-      icon: <BiMap className="size-8" />,
+      icon: <BiMap className="size-8 fill-black" />,
       title: "Office",
-      description: "123 Sample St, Sydney NSW 2000 AU",
+      description: "14 Lexington Dr, Bella Vista NSW 2153 AU",
       button: {
         title: "Get Directions",
         variant: "link",

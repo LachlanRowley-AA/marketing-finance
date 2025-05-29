@@ -37,12 +37,13 @@ export const Timeline10 = (props: Timeline10Props) => {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28 relative z-10 bg-black">
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28 relative z-10 bg-[radial-gradient(circle,_#f6eee3_80%,_#E0D3AF)]
+          text-text-secondary">
       <div className="container">
         <div className="flex flex-col items-center">
           <div className="mb-12 text-center md:mb-18 lg:mb-20">
             <div className="relative z-10 w-full max-w-lg">
-              <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
+              <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl !text-[#000]">{heading}</h2>
               <p className="md:text-md">{description}</p>
             </div>
           </div>
@@ -53,7 +54,7 @@ export const Timeline10 = (props: Timeline10Props) => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
+                  transition={{ duration: 0.8, delay: 0.45 }}
                   >
                   <TimelineItem key={index} index={index} item={item} />
                 </motion.div>
@@ -101,13 +102,13 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
       >
       {/* Dashed Arrow Between Items */}
       {!isLast && isEven && (
         <div className="flex items-center justify-center relative z-50 overflow-visible hidden md:block">
           <svg
-            className="w-8 h-20 text-gray-400 overflow-visible"
+            className="w-8 h-20 text-text-secondary overflow-visible"
             viewBox="0 0 24 60"
             fill="none"
             stroke="currentColor"
@@ -126,7 +127,7 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
       {!isLast && !isEven && (
         <div className="flex items-center justify-center relative z-50 overflow-visible hidden md:block">
           <svg
-            className="w-8 h-20 text-gray-400 overflow-visible"
+            className="w-8 h-20 text-text-secondary overflow-visible"
             viewBox="0 0 24 60"
             fill="none"
             stroke="currentColor"
@@ -155,8 +156,8 @@ const TimelineCircle = React.forwardRef<HTMLDivElement, TimelineCircleProps>(
 );
 
 const TimelineContent = ({ item }: { item: TimelineItem }) => (
-  <div className="z-10 flex flex-col border border-border-secondary p-4 md:p-8">
-    <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
+  <div className="z-10 flex flex-col border border-[#000] p-4 md:p-8 shadow-[0px_0px_10px_#000]">
+    <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl text-text-secondary">
       {item.heading}
     </h3>
     <p>{item.description}</p>

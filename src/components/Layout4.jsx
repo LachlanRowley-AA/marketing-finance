@@ -41,7 +41,7 @@ export function Layout4() {
               </div>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              <Button title="Learn More" variant="secondary">
+              <Button title="Learn More" variant="secondary" className="rounded-3xl hover:drop-shadow-[0px_0px_10px_#01E194] bg-brand-primary">
                 Learn More
               </Button>
               <Button
