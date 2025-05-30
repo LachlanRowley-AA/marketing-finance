@@ -11,6 +11,7 @@ import { Contact12 } from "./components/Contact";
 import { Contact } from "./components/ContactNew";
 import { Comparison1 } from "./components/Comparison";
 import { Briefing } from "./components/Briefing";
+import { Chart } from "./components/Chart";
 
 export default function Page() {
   return (
@@ -25,6 +26,7 @@ export default function Page() {
         />
         <div className="relative z-10"><Navbar6 /></div>
         <div className="relative z-10"><Header26 /></div>
+        <div className="relative z-10"><Chart width={800} height={500}/></div>
         <div className="relative z-10"><Briefing /></div>
         <Layout90 />
         <div className="relative z-10"><Timeline10 /></div>
