@@ -24,6 +24,7 @@ export default function Page() {
           type="font/otf"
           crossOrigin="anonymous"
         />
+        <meta name="google-site-verification" content="zO1u8NQYgHAPUrmDrGJG30pS_IsAPPAhA17LxzGt2l4" />
         <div className="relative z-10"><Navbar6 /></div>
         <div className="relative z-10"><Header26 /></div>
         <div className="relative z-10"><Chart width={800} height={500}/></div>
